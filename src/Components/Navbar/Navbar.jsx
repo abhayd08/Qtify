@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
-import Button from "./Button";
-import logo from "../assets/logo.svg";
-import SearchBar from "./SearchBar";
+import Button from "../Button/Button";
+import logo from "../../assets/logo.svg";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar = () => {
   return (
