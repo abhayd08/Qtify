@@ -1,0 +1,15 @@
+.nav-btn {
+  width: 10.625rem;
+  height: 2.9375rem;
+  background-color: var(--color-black);
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.01563rem;
+  border-radius: 0.75rem;
+  border: 0;
+  cursor: pointer;
+}
