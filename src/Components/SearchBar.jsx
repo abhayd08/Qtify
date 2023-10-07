@@ -2,13 +2,18 @@ import styles from "./SearchBar.module.css";
 
 const SearchBar = () => {
   return (
-    <div className={styles["search-bar"]}>
+    <form
+      className={styles["search-bar"]}
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <input
         type="text"
         placeholder="Search a album of your choice"
         className={styles["text-box"]}
       ></input>
-      <div className={styles["search-icon"]}>
+      <button className={styles["search-btn"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -23,8 +28,8 @@ const SearchBar = () => {
             fill="#121212"
           />
         </svg>
-      </div>
-    </div>
+      </button>
+    </form>
   );
 };
 

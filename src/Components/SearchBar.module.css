@@ -17,7 +17,7 @@
   outline: 0;
   border: 0;
   border-right: 0.1px solid var(--color-black);
-  transition: 0.2s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 
 .text-box:focus {
@@ -27,10 +27,19 @@
   transform: scale(1.01);
 }
 
-.search-icon {
+.search-btn {
   width: 4.125rem;
   height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: 0;
+  background-color: var(--color-white);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.search-btn:active {
+  transform: scale(0.92);
 }
