@@ -9,6 +9,7 @@
 .hero-banner {
   width: 49.9375rem;
   height: 13.25rem;
+  gap: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
