@@ -67,7 +67,12 @@ const Home = () => {
         {albumsToExpand.includes("New Albums") ? (
           <CardsGrid albums={newAlbums} />
         ) : (
-          ""
+          <CardCarousel
+            data={newAlbums}
+            renderComponent={(data) => {
+              return <Card albumsData={data} />;
+            }}
+          />
         )}
       </div>
     </>
