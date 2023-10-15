@@ -1,12 +1,14 @@
 import styles from "./Card.module.css";
 
-const Card = ({ image, followersCount, title }) => {
+const Card = ({ albumsData }) => {
+  console.log(albumsData)
+  const {image, follows, title} = albumsData;
   return (
     <div className={styles.card}>
       <div className={styles["card-media"]}>
         <img src={image} alt="card-img" className={styles["card-image"]} />
         <div className={styles["card-content"]}>
-          <p className={styles.followers}>{followersCount} Follows</p>
+          <p className={styles.followers}>{follows} Follows</p>
         </div>
       </div>
       <div className={styles.title}>{title}</div>
