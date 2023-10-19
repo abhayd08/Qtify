@@ -29,7 +29,6 @@ const CardCarousel = ({ data, renderComponent }) => {
         <CarouselLeftNavigation />
         <CarouselRightNavigation />
         {data.map((item) => {
-          console.log(item);
           return (
             <SwiperSlide key={item.id}>{renderComponent(item)}</SwiperSlide>
           );

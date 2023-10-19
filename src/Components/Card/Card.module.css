@@ -37,7 +37,7 @@
   border-bottom-right-radius: 0.63rem;
 }
 
-.followers {
+.likes-follows {
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: "Poppins", sans-serif;

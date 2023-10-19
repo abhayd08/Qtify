@@ -1,0 +1,20 @@
+.brand {
+  color: var(--color-white);
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0.3rem;
+}
+
+.genres {
+  color: var(--color-white) !important;
+  font-family: Poppins !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+  letter-spacing: 0px !important;
+  text-transform: none !important;
+  text-align: left !important;
+}
