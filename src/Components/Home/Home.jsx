@@ -9,6 +9,7 @@ import AlbumsHeader from "../AlbumsHeader/AlbumsHeader";
 import styles from "./Home.module.css";
 import CardCarousel from "../CardCarousel/CardCarousel";
 import FilterTab from "../FilterTab/FilterTab";
+import FAQ from "../FAQ/FAQ";
 
 const Home = () => {
   const [topAlbums, setTopAlbums] = useState([]);
@@ -126,6 +127,7 @@ const Home = () => {
       <div className={styles.container}>
         <FilterTab genres={genres} songs={songs} />
       </div>
+      <FAQ />
     </>
   );
 };
