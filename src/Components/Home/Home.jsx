@@ -17,6 +17,7 @@ const Home = () => {
   const [albumsToExpand, setAlbumsToExpand] = useState([]);
   const [genres, setGenres] = useState([]);
   const [songs, setSongs] = useState([]);
+  console.log(topAlbums, songs);
 
   useEffect(() => {
     (async () => {
