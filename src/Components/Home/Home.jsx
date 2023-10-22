@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
 import Navbar from "../Navbar/Navbar";
@@ -10,6 +10,7 @@ import styles from "./Home.module.css";
 import CardCarousel from "../CardCarousel/CardCarousel";
 import FilterTab from "../FilterTab/FilterTab";
 import FAQ from "../FAQ/FAQ";
+import SearchResult from "../SearchResult/SearchResult";
 
 const Home = () => {
   const [topAlbums, setTopAlbums] = useState([]);
@@ -17,7 +18,10 @@ const Home = () => {
   const [albumsToExpand, setAlbumsToExpand] = useState([]);
   const [genres, setGenres] = useState([]);
   const [songs, setSongs] = useState([]);
-  console.log(topAlbums, songs);
+
+  const allAlbumsData = [...topAlbums, ...newAlbums];
+  const [searchResultData, setSearchResultData] = useState([]);
+  const MyContext = createContext();
 
   useEffect(() => {
     (async () => {
@@ -60,8 +64,13 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <Navbar />
+    <MyContext.Provider value={{ setSearchResultData }}>
+      <Navbar allAlbumsData={allAlbumsData} myContext={MyContext} />
+      {searchResultData.length > 0 ? (
+        <SearchResult data={searchResultData} myContext={MyContext} />
+      ) : (
+        ""
+      )}
       <HeroSection />
       <div className={styles.container}>
         <AlbumsHeader
@@ -125,11 +134,11 @@ const Home = () => {
           </div>
         )}
       </div>
-      <div className={styles.container}>
+      <div className={styles["songs-container"]}>
         <FilterTab genres={genres} songs={songs} />
       </div>
       <FAQ />
-    </>
+    </MyContext.Provider>
   );
 };
 

@@ -1,17 +1,48 @@
 import styles from "./SearchBar.module.css";
+import { useState, useContext } from "react";
+import { useSnackbar } from "notistack";
 
-const SearchBar = () => {
+const SearchBar = ({ allAlbumsData, myContext }) => {
+  const [inputValue, setInputValue] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
+  const { setSearchResultData } = useContext(myContext);
   return (
     <form
       className={styles["search-bar"]}
       onSubmit={(e) => {
         e.preventDefault();
+        setSearchResultData([]);
+        if (inputValue.length < 1) {
+          enqueueSnackbar("Type something to search.", { variant: "warning" });
+        } else {
+          const filteredData = [];
+          allAlbumsData.filter((albumData) => {
+            if (
+              albumData.title.toLowerCase().includes(inputValue.toLowerCase())
+            ) {
+              filteredData.push(albumData);
+            }
+            return true;
+          });
+          if (filteredData.length > 0) {
+            setSearchResultData(filteredData);
+          } else {
+            setSearchResultData([]);
+            enqueueSnackbar("No matching search results found. Try again!", {
+              variant: "warning",
+            });
+          }
+        }
       }}
     >
       <input
         type="text"
         placeholder="Search a album of your choice"
         className={styles["text-box"]}
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.currentTarget.value);
+        }}
       ></input>
       <button className={styles["search-btn"]}>
         <svg
