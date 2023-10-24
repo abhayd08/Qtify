@@ -23,3 +23,15 @@ body {
 .swiper-slide {
   width: auto;
 }
+
+@media (max-width: 1150px) {
+  body {
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .swiper-wrapper {
+    width: 100vw !important;
+  }
+}
