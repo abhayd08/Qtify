@@ -86,3 +86,33 @@
     height: 455px;
   }
 }
+
+@media (max-width: 1150px) {
+  .container {
+    left: 615px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .container {
+    left: 600px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .container {
+    left: 590px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container {
+    left: 580px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .container {
+    left: 567px;
+  }
+}
